@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Codex via WARP
+Comment=Start Codex through the local WARP proxy
+Exec=@PREFIX@/bin/codex-warp
+Icon=utilities-terminal
+Terminal=true
+Categories=Development;

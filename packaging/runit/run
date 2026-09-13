@@ -1,0 +1,6 @@
+#!/bin/sh
+# The down file keeps this service off on boot; warp-vpn starts it on demand.
+exec 2>&1
+umask 077
+export PATH=@PREFIX@/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+exec @PREFIX@/bin/warp-vpn _serve

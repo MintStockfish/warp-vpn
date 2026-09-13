@@ -1,0 +1,32 @@
+[Unit]
+Description=WARP-in-WARP VPN and local proxy
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=@PREFIX@/bin/warp-vpn _serve
+StateDirectory=warp-vpn
+StateDirectoryMode=0755
+RuntimeDirectory=warp-vpn
+RuntimeDirectoryMode=0755
+# Keep the control lock alive across a mode switch/restart.
+RuntimeDirectoryPreserve=yes
+LoadCredential=tun.json:/etc/warp-vpn/tun.json
+LoadCredential=proxy.json:/etc/warp-vpn/proxy.json
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=20
+UMask=0077
+NoNewPrivileges=true
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+
+[Install]
+WantedBy=multi-user.target

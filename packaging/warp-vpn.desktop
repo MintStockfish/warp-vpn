@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=WARP VPN
+Comment=Toggle WARP VPN for the whole computer
+Exec=@PREFIX@/bin/warp-vpn toggle
+Icon=network-vpn
+Terminal=true
+Categories=Network;

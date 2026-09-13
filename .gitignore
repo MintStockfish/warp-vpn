@@ -1,0 +1,25 @@
+# Local credentials and generated tunnel configurations (at any depth).
+warpscout-account*.json
+*account*.json
+*proxies*.json
+config.json
+tun*.json
+proxy*.json
+outer.conf
+*.key
+*.pem
+private/
+secrets/
+state/
+*.log
+*.sqlite*
+# Local builds, staging roots and Python caches.
+build/
+dist/
+result
+result-*
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.DS_Store
